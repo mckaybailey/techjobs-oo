@@ -15,6 +15,9 @@
     </div>
 
     <div th:fragment="jobs-list">
+        <div th:unless="${jobs} and ${jobs.size()}">
+            <h2>No Results</h2>
+        </div>
         <div th:if="${jobs} and ${jobs.size()}">
 
             <h3 th:text="${jobs.size() + ' Result(s)'}"></h3>
